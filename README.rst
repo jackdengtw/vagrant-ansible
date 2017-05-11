@@ -44,10 +44,10 @@ To initialize Ansible role depdendences run ``./update-roles.sh``.
     ./update-roles.sh
 
 Then on Windows and machines without local Ansible installation, start Vagrant
-box ``vagrant up`` and log in with ``vagrant ssh``
+box ``vagrant up`` and log in with ``vagrant ssh``. see `centos7 image release notes`_ for image specific requirement.
 
 .. code:: bash
-
+    vagrant plugin install vagrant-vbguest # for centos7 only
     vagrant up
     vagrant ssh ansible
 
@@ -117,3 +117,4 @@ under the jenkins role in the inventory file.
 
 .. _ask become pass: http://docs.ansible.com/ansible/become.html
 .. _Setting up the Virtual Machine: http://solita-cd.readthedocs.org/en/latest/jenkins_ansible_vm.html
+.. _centos7 image release notes: https://seven.centos.org/2017/05/updated-centos-vagrant-images-available-v1704-01/

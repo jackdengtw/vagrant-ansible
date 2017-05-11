@@ -5,5 +5,7 @@
     - solita_jenkins_security_realm: jenkins
     - solita_jenkins_users:
       - petrisi
+    - jenkins_version: 2.46.2
+    - reinstall: yes
   roles:
       - solita.jenkins
