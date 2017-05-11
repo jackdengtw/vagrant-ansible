@@ -44,7 +44,9 @@ To initialize Ansible role depdendences run ``./update-roles.sh``.
     ./update-roles.sh
 
 Then on Windows and machines without local Ansible installation, start Vagrant
-box ``vagrant up`` and log in with ``vagrant ssh``. see `centos7 image release notes`_ for image specific requirement.
+box ``vagrant up`` and log in with ``vagrant ssh``. See `centos7 image release notes`_
+for image specific requirement, i.e. ``vagrant plugin install vagrant-vbguest``
+before ``vagrant up``.
 
 .. code:: bash
     vagrant plugin install vagrant-vbguest # for centos7 only

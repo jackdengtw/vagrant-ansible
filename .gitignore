@@ -1,4 +1,6 @@
 .vagrant
+id_rsa.pub
+jenkins.retry
 *.swp
 *.swo
 roles/*

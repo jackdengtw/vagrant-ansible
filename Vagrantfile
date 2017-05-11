@@ -24,11 +24,18 @@ Vagrant.configure(2) do |config|
 
       echo "cd /ansible" >> ~/.profile
       echo "source ~/.profile" >> ~/.bash_profile
+      ssh-keygen -f ~/.ssh/id_rsa -P ''
+      cp ~/.ssh/id_rsa.pub /ansible
     EOF
   end
 
   config.vm.define "jenkins" do |jenkins|
     jenkins.vm.network "private_network", ip: "192.168.50.77"
+    jenkins.vm.provision "shell", privileged:false, inline: <<-JENKINS
+        set -e
+
+        cat /vagrant/id_rsa.pub >> ~/.ssh/authorized_keys
+    JENKINS
   end
 
 end
