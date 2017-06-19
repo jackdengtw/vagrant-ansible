@@ -2,11 +2,29 @@
 - hosts:
     - jenkins
   vars:
+    - __jenkins_repo_url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    - __jenkins_repo_key_url: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    - __jenkins_pkg_url: https://pkg.jenkins.io/redhat-stable
+    - geerlingguy_jenkins_install_plugins: no
     - solita_jenkins_security_realm: jenkins
     - solita_jenkins_remote_param: -remote
     - solita_jenkins_users:
+      - huangzili1
+    - solita_jenkins_absent_users:
       - petrisi
     - jenkins_version: 2.46.2
-    - reinstall: yes
+    - reinstall: no
+    - solita_jenkins_plugins: []
+    - solita_admin_email: re_jenkins@jd.com
+    - solita_jenkins_url: http://jenkins_url_not_set.com:8080
+    - cache_directory: /tmp
+    - jenkins_plugins:
+      - name: ownership
+        version: "0.10.0"
+        enabled: true
+
+      - name: gitlab-plugin
+        version: "1.4.5"
+
   roles:
       - solita.jenkins
