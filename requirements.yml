@@ -2,8 +2,5 @@
 - src: https://github.com/geerlingguy/ansible-role-java.git
   name: geerlingguy.java
 
-- src: https://github.com/jackdengtw/ansible-role-crossbow__jenkins_plugins.git
-  name: jackdengtw.crossbow__jenkins_plugins
-
 # - src: https://github.com/solita/ansible-role-solita.jenkins.git
   # name: solita.jenkins

@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
         openssl-devel
       sudo easy_install pip
       sudo -H pip install -U pip setuptools
-      sudo -H pip install ansible==2.2.0.0
+      sudo -H pip install ansible==2.3.1.0
 
       echo "cd /ansible" >> ~/.profile
       echo "source ~/.profile" >> ~/.bash_profile

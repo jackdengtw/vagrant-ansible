@@ -2,29 +2,144 @@
 - hosts:
     - jenkins
   vars:
-    - __jenkins_repo_url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
-    - __jenkins_repo_key_url: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-    - __jenkins_pkg_url: https://pkg.jenkins.io/redhat-stable
-    - geerlingguy_jenkins_install_plugins: no
+    - geerlingguy_redhat_package_branch_suffix: -stable
     - solita_jenkins_security_realm: jenkins
     - solita_jenkins_remote_param: -remote
-    - solita_jenkins_users:
-      - huangzili1
-    - solita_jenkins_absent_users:
-      - petrisi
     - jenkins_version: 2.46.2
     - reinstall: no
     - solita_jenkins_plugins: []
     - solita_admin_email: re_jenkins@jd.com
     - solita_jenkins_url: http://jenkins_url_not_set.com:8080
     - cache_directory: /tmp
-    - jenkins_plugins:
-      - name: ownership
-        version: "0.10.0"
-        enabled: true
+    - jenkins_plugins_dict:
+        # leaf
+        # Folders Plugin
+        cloudbees-folder:
+          version: "6.0.4"
+        # leaf
+        # Role-based Authorization Strategy
+        role-strategy:
+          version: "2.5.0"
+        # leaf
+        # Job DSL
+        job-dsl:
+          version: "1.63"
+        # leaf
+        # Credentials Plugin
+        credentials:
+          version: "2.1.14"
+        # leaf
+        # SSH Credentials Plugin
+        ssh-credentials:
+          version: "1.13"
+        # leaf
+        # Authorize Project
+        authorize-project:
+          version: "1.3.0"
+        # leaf
+        # Job and Node ownership plugin
+        ownership:
+          version: "0.10.0"
+          enabled: yes
+        # leaf
+        # GitLab Plugin
+        gitlab-plugin:
+          version: "1.4.5"
 
-      - name: gitlab-plugin
-        version: "1.4.5"
+        # Icon Shim Plugin
+        icon-shim:
+          version: "2.0.3"
+          enabled: yes
 
+        # Matrix Authorization Strategy Plugin
+        matrix-auth:
+          version: "1.6"
+          enabled: yes
+
+        # bouncycastle API Plugin
+        bouncycastle-api:
+          version: "2.16.1"
+          enabled: yes
+
+        # JUnit Plugin
+        junit:
+          version: "1.20"
+          enabled: yes
+
+        # Matrix Project Plugin
+        matrix-project:
+          version: "1.11"
+          enabled: yes
+
+        # Pipeline: SCM Step
+        workflow-scm-step:
+          version: "2.5"
+          enabled: yes
+
+        # Script Security Plugin
+        script-security:
+          version: "1.29"
+          enabled: yes
+
+        # SCM API Plugin
+        scm-api:
+          version: "2.1.1"
+          enabled: yes
+
+        # Pipeline: Step API
+        workflow-step-api:
+          version: "2.11"
+          enabled: yes
+
+        # Pipeline: API
+        workflow-api:
+          version: "2.17"
+          enabled: yes
+
+        # JavaScript GUI Lib: jQuery bundles (jQuery and jQuery UI) plugin
+        jquery-detached:
+          version: "1.2.1"
+          enabled: yes
+
+        # Pipeline: Supporting APIs
+        workflow-support:
+          version: "2.14"
+          enabled: yes
+
+        # Structs Plugin
+        structs:
+          version: "1.8"
+          enabled: yes
+
+        # JavaScript GUI Lib: ACE Editor bundle plugin
+        ace-editor:
+          version: "1.1"
+          enabled: yes
+
+        # Pipeline: Groovy
+        workflow-cps:
+          version: "2.36"
+          enabled: yes
+
+        # Git client plugin
+        git-client:
+          version: "2.4.6"
+          enabled: yes
+
+        # Display URL API
+        display-url-api:
+          version: "2.0"
+          enabled: yes
+
+        # Mailer Plugin
+        mailer:
+          version: "1.20"
+          enabled: yes
+
+        # Git plugin
+        git:
+          version: "3.3.0"
+          enabled: yes
+      
   roles:
-      - solita.jenkins
+      - geerlingguy.jenkins
