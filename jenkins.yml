@@ -4,13 +4,10 @@
   vars:
     - geerlingguy_redhat_package_branch_suffix: -stable
     - solita_jenkins_security_realm: jenkins
-    - solita_jenkins_remote_param: -remote
-    - jenkins_version: 2.46.2
+    - jenkins_version: 2.46.3
     - reinstall: no
-    - solita_jenkins_plugins: []
     - solita_admin_email: re_jenkins@jd.com
     - solita_jenkins_url: http://jenkins_url_not_set.com:8080
-    - cache_directory: /tmp
     - jenkins_plugins_dict:
         # leaf
         # Folders Plugin
@@ -142,4 +139,5 @@
           enabled: yes
       
   roles:
-      - geerlingguy.jenkins
+      - solita.jenkins
+      # - geerlingguy.jenkins

@@ -4,6 +4,6 @@
 rm -rf roles/*
 ansible-galaxy install -p roles -r requirements.yml -v
 pushd roles
-git clone git://github.com/jackdengtw/ansible-role-jenkins geerlingguy.jenkins
-git clone git://github.com/jackdengtw/ansible-role-solita.jenkins solita.jenkins
+git clone https://github.com/jackdengtw/ansible-role-jenkins geerlingguy.jenkins
+git clone https://github.com/jackdengtw/ansible-role-solita.jenkins solita.jenkins
 popd
