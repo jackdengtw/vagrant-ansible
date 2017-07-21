@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
     ansible.vm.provision "shell", privileged: false, inline: <<-EOF
       set -e
 
-      sudo yum update && sudo yum install -y \
+      sudo yum update -y && sudo yum install -y \
         git \
         python-setuptools \
         python-devel \
@@ -24,6 +24,7 @@ Vagrant.configure(2) do |config|
 
       echo "cd /ansible" >> ~/.profile
       echo "source ~/.profile" >> ~/.bash_profile
+      rm -rf ~/.ssh/id_rsa*
       ssh-keygen -f ~/.ssh/id_rsa -P ''
       cp ~/.ssh/id_rsa.pub /ansible
     EOF

@@ -1,0 +1,17 @@
+---
+ - hosts: jenkins
+   vars:
+    - JENKINS_HOME: /var/lib/jenkins
+    - jenkins_utils_tenants:
+        - name: datacloud
+          local_admins:
+            - heyuzhi
+          users:
+            - jiabin
+        - name: pid
+          local_admins:
+            - pengchang
+          users:
+            - yuanmeng
+   roles:
+    - jenkins.utils

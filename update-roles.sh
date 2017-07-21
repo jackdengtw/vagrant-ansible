@@ -6,4 +6,5 @@ ansible-galaxy install -p roles -r requirements.yml -v
 pushd roles
 git clone https://github.com/jackdengtw/ansible-role-jenkins geerlingguy.jenkins
 git clone https://github.com/jackdengtw/ansible-role-solita.jenkins solita.jenkins
+git clone git@git.jd.com/cloudtest/jenkins_utils jenkins.utils
 popd

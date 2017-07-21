@@ -4,10 +4,23 @@
   vars:
     - geerlingguy_redhat_package_branch_suffix: -stable
     - solita_jenkins_security_realm: jenkins
-    - jenkins_version: 2.46.3
+    - jenkins_version: 2.60.1
     - reinstall: no
     - solita_admin_email: re_jenkins@jd.com
     - solita_jenkins_url: http://jenkins_url_not_set.com:8080
+    - JENKINS_HOME: /var/lib/jenkins
+    - jenkins_utils_tenants:
+        - name: datacloud
+          local_admins:
+            - heyuzhi
+          users:
+            - jiabin
+        - name: pid
+          local_admins:
+            - pengchang
+          users:
+            - yuanmeng
+
     - jenkins_plugins_dict:
         # leaf
         # Folders Plugin
@@ -140,4 +153,5 @@
       
   roles:
       - solita.jenkins
+      # - jenkins.utils
       # - geerlingguy.jenkins

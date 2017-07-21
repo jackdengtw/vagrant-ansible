@@ -1,8 +1,8 @@
 .vagrant
 id_rsa.pub
-jenkins.retry
 *.swp
 *.swo
+*.retry
 roles/*
 environments/*/solita_jenkins_default_password
 
